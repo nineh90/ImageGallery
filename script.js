@@ -57,10 +57,12 @@ function createBigImage(child) {
             image.src = child.src;
             image.classList.add('big_image');
             image.id = 'big_' + child.id;
-            setTimeout(function() {
-                image.style.opacity = 1;
-            },250);
+            image.style.opacity = 1;
             imageBoardContainer.append(image);
+            image.style.transform = "rotateY(90deg)";
+            setTimeout(function() {
+                image.style.transform = "rotateY(180deg)";
+            }, 250);
         }
     }
 }
@@ -79,7 +81,7 @@ function closeBigImage() {
 function nextImage() {
     let bigImagePos = getBigImage();
     const bigImage = document.getElementById('big_image-' + bigImagePos);
-    bigImage.style.opacity = 0;
+    bigImage.style.transform = "rotateY(90deg)";
     setTimeout(function() {
     if (parseFloat(bigImagePos) < imageArr.length -1) {
         bigImagePos = parseFloat(bigImagePos) + 1;
@@ -91,13 +93,13 @@ function nextImage() {
     const image = document.getElementById('image-' + bigImagePos);
 
         createBigImage(image);
-    },250);
+    },1000);
 }
 
 function previousImage() {    
     let bigImagePos = getBigImage();
     const bigImage = document.getElementById('big_image-' + bigImagePos);
-    bigImage.style.opacity = 0;
+    bigImage.style.transform = "rotateY(90deg)";
     setTimeout(function() {
         if (parseFloat(bigImagePos) > 0) {
             bigImagePos = parseFloat(bigImagePos) - 1;
@@ -107,7 +109,7 @@ function previousImage() {
         const sliderContainer = document.getElementById("image-slider-container");
         sliderContainer.innerHTML = '';
         createBigImage(document.getElementById('image-' + bigImagePos));
-    },250);
+    },1000);
 }
 
 function getBigImage() {
