@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    
+    background-image: url("assets/space5.jpeg");
+}
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+#image-board-container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    width: 250px;
+    height: 250px;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;    
+    border: 1px solid lawngreen;
+}
+
+#image-slider-container {
+    position: absolute;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#image-slider-container img {
+    height: 60vh;
+    width: auto;
+}
+
+#image-slider-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0; 
+    display: flex;
+}
+
+#image-slider-wrapper {
+    opacity: 0;
+    -webkit-transition: opacity 0.7s ease-in-out;
+    -moz-transition: opacity 0.7s ease-in-out;
+    -o-transition: opacity 0.7s ease-in-out;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.big_image {
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#close-image-container {
+    color: white;
+    font-size: 32px;
+    border: 1px solid lawngreen;
+    border-radius: 5px;
+    padding: 0.1rem 0.5rem;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-family: cursive;
+    cursor: pointer;
+}
+
+.arrow-btn {
+    font-size: 48px;
+    color: lawngreen;
+    border: 1px solid lawngreen;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Economica', sans-serif;
+}
+.arrow-btn span {
+    margin-top: -5px;
+}
+
+.arrow-btn:hover {
+    background-color: lawngreen;
+    color: black;
+}
+
+#left-arrow-btn {
+    left: 100px;
+}
+
+#right-arrow-btn {
+    right: 100px;
+}
